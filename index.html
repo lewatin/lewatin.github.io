@@ -3,10 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEWATIN</title>
+
+    <title>LEWATIN — Short Links</title>
+
+    <meta
+        name="description"
+        content="LEWATIN — Simple and fast URL shortener."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0b0d10;
+            --card: #14171c;
+            --border: #242932;
+            --text: #f5f7fa;
+            --muted: #9299a5;
+            --accent: #ffffff;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+        }
+
+        /* HEADER */
+
+        header {
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            width: min(1100px, 92%);
+            height: 64px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+        }
+
+        /* MAIN */
+
+        main {
+            width: min(1100px, 92%);
+            margin: auto;
+            padding: 70px 0;
+        }
+
+        .hero {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 8vw, 64px);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* SHORTENER */
+
+        .shortener {
+            max-width: 650px;
+            margin: 40px auto 0;
+            padding: 8px;
+
+            display: flex;
+            gap: 8px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .shortener input {
+            min-width: 0;
+            flex: 1;
+
+            padding: 15px;
+
+            background: transparent;
+            border: none;
+            outline: none;
+
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        .shortener input::placeholder {
+            color: #666d78;
+        }
+
+        .shortener button {
+            padding: 0 22px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: var(--accent);
+            color: #000;
+
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .shortener button:hover {
+            opacity: 0.9;
+        }
+
+        /* ADVERTISEMENT */
+
+        .ad {
+            width: 100%;
+            max-width: 728px;
+            min-height: 90px;
+
+            margin: 55px auto 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px dashed #303640;
+            border-radius: 12px;
+
+            color: #666d78;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* FEATURES */
+
+        .features {
+            max-width: 850px;
+            margin: 70px auto 0;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .feature {
+            padding: 25px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .feature h3 {
+            font-size: 16px;
+        }
+
+        .feature p {
+            margin-top: 8px;
+
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 20px;
+
+            border-top: 1px solid var(--border);
+
+            text-align: center;
+
+            color: #666d78;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            main {
+                padding: 55px 0;
+            }
+
+            .shortener {
+                flex-direction: column;
+            }
+
+            .shortener button {
+                height: 48px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .ad {
+                min-height: 70px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>LEWATIN</h1>
-    <p>Short Links • Ads • Analytics</p>
-</body>
-</html>
+
+<header>
+
+    <nav class="nav">
+
+        <div class="logo">
+            LEWATIN
+        </div>
+
+        <a
+            href="#"
+            class="nav-link"
+        >
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="hero">
+
+        <h1>
+            Short links.<br>
+            Simple.
+        </h1>
+
+        <p>
+            Buat link pendek dengan cepat dan mudah.
+            Bagikan link kamu tanpa URL yang panjang.
+        </p>
+
+
+        <div class="shortener">
+
+            <input
+                type="url"
+                placeholder="Paste your long URL here..."
+                autocomplete="off"
+            >
+
+            <button type="button">
+                SHORTEN
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <div class="ad">
+        ADVERTISEMENT
+    </div>
+
+
+    <section class="features">
+
+        <div class="feature
